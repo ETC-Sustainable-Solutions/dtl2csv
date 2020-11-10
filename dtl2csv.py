@@ -43,14 +43,14 @@ def main(argv):
     offset = size * 8
     p = offset + 20
     
-    name, = unpack('4s',fileContent[p:p+4])
-    p = p + calcsize('4s')
+    name, = unpack('<4s',fileContent[p:p+4])
+    p = p + calcsize('<4s')
     name = name.decode('ascii')
     if (name == 'name'):
         headers = []
         for i in range(size):
             l, = unpack('<h',fileContent[p:p+2])
-            p = p + calcsize('h')
+            p = p + calcsize('<h')
             pf = p + l
             name, = unpack(str(l)+'s', fileContent[p:pf])
             p = p + l
@@ -60,11 +60,11 @@ def main(argv):
         values = []
         while p < len(fileContent):
             row = {}
-            row['date'],row['tr'] = unpack('IB',fileContent[p:p+5])
-            p = p + calcsize('IB')
+            row['date'],row['tr'] = unpack('<IB',fileContent[p:p+5])
+            p = p + calcsize('<IB')
             for i in range(size):
-                val, = unpack('f',fileContent[p:p+4])
-                p = p + calcsize('f')
+                val, = unpack('<f',fileContent[p:p+4])
+                p = p + calcsize('<f')
                 row[headers[i]]=val
             values.append(row)
         # esportiamo il csv
