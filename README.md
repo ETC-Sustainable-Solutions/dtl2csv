@@ -28,7 +28,7 @@ python dtl2csv.py -t -i [file dtl] > [file csv]
 ----
 # SPECIFICHE DEL FILE DTL
 
-##Brief description
+## Brief description
 
 Data log (data sampling) overhead for each record storage.
 
@@ -36,7 +36,7 @@ Header = 20 byte + data channel x 8byte + channel name
 
 Entry(each) = 5bytes + sizeof( record )
 
-##Detailed description
+## Detailed description
 
 Content|Length(Byte)
 :--|--:
