@@ -1,32 +1,32 @@
-# PICCOLA UTILITY DI CONVERSIONE 
+# SMALL CONVERSION UTILITY 
 
-Questa app converte il formato DTL in CSV
+This app converts DTL format to CSV format.
 
-E' limitata all'interpretazione dei valori in formato float.
+It is limited to interpreting values in float format.
 
 ---
-# UTILIZZO
+# USE.
 
 ```
-python dtl2csv.py -i [file dtl] 
+python dtl2csv.py -i [dtl file] 
 ```
 
-L'output e' su Standard Output quindi per creare il CSV:
+The output is on Standard Output so to create the CSV:
 
 ```
-python dtl2csv.py -i [file dtl] > [file csv]
+python dtl2csv.py -i [dtl file] > [csv file]
 ```
 
-Il tool scrive la data nel formato ISO YYYY-MM-DD HH:MM:SS
+The tool writes the date in the ISO format YYYY-MM-DD HH:MM:SS
 
-Nel caso si volesse mantenere il formato UNIX TIMESTAMP utilizzare il -t
+In case you want to keep the UNIX TIMESTAMP format use the -t
 
 ```
-python dtl2csv.py -t -i [file dtl] > [file csv]
+python dtl2csv.py -t -i [dtl file] > [csv file]
 ```
 
 ----
-# SPECIFICHE DEL FILE DTL
+# DTL FILE SPECIFICATIONS
 
 ## Brief description
 
@@ -58,4 +58,4 @@ The 2nd data of the 1st channel|n
 PS:
 
 1. n : depends on the data
-2. The actual recording time is [the time to save the first record]  multiples by 10.
+2. the actual recording time is [the time to save the first record]  multiples by 10.
